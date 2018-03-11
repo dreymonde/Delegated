@@ -44,6 +44,10 @@ extension Delegated {
         self.callback = callback
     }
     
+    public mutating func removeDelegate() {
+        self.callback = nil
+    }
+    
 }
 
 extension Delegated where Output == Void {
