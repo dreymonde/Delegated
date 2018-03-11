@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Delegated
+import Delegated
 
 class DelegatedTests: XCTestCase {
     
