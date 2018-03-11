@@ -123,6 +123,10 @@ dependencies: [
 
 And, of course, you always have an option of just copying-and-pasting the code - **Delegated** is just one file, so feel free.
 
+## See also
+
+- [krzysztofzablocki/Strongify](https://github.com/krzysztofzablocki/Strongify) - a 1-file µframework providing a nicer API for avoiding weak-strong dance.
+
 [swift-badge]: https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat
 [swift-url]: https://swift.org
 [platform-badge]: https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg
