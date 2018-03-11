@@ -101,13 +101,13 @@ numberToString.isDelegateSet // Bool
 
 ## Installation
 
-**AppFolder** is available through [Carthage][carthage-url]. To install, just write into your Cartfile:
+**Delegated** is available through [Carthage][carthage-url]. To install, just write into your Cartfile:
 
 ```ruby
 github "dreymonde/Delegated" ~> 0.1.0
 ```
 
-**AppFolder** is also available through [Cocoapods][cocoapods-url]:
+**Delegated** is also available through [Cocoapods][cocoapods-url]:
 
 ```ruby
 pod 'Delegated', '~> 0.1.0'
