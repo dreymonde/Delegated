@@ -11,6 +11,8 @@ public struct Delegated<Input, Output> {
     
     private(set) var callback: ((Input) -> Output?)?
     
+    public init() { }
+    
     public mutating func delegate<Target : AnyObject>(to target: Target,
                                                       with callback: @escaping (Target, Input) -> Output) {
         self.callback = { [weak target] input in
