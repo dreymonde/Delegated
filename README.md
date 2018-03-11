@@ -1,8 +1,10 @@
 # Delegated
+[![Swift][swift-badge]][swift-url]
+[![Platform][platform-badge]][platform-url]
 
 **Delegated** is a super small package that solves the retain cycle problem when dealing with closure-based delegation.
 
-Medium post here.
+Medium post [here](https://medium.com/anysuggestion/preventing-memory-leaks-with-swift-compile-time-safety-49b845df4dc6).
 
 ## Usage
 
@@ -20,7 +22,7 @@ downloader.didDownload = { [weak self] image in
 ```swift
 self.downloader = ImageDownloader()
 downloader.didDownload.delegate(to: self) { (self, image) in
-    self.image = image
+    self.currentImage = image
 }
 ```
 
@@ -119,5 +121,9 @@ dependencies: [
 ]
 ```
 
+[swift-badge]: https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat
+[swift-url]: https://swift.org
+[platform-badge]: https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg
+[platform-url]: https://developer.apple.com/swift/
 [carthage-url]: https://github.com/Carthage/Carthage
 [cocoapods-url]: https://github.com/CocoaPods/CocoaPods

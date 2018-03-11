@@ -1,14 +1,14 @@
 Pod::Spec.new do |s|
   s.name         = "Delegated"
   s.version      = "0.1"
-  s.summary      = ""
+  s.summary      = "Closure-based delegation without memory leaks"
   s.description  = <<-DESC
-    Your description here.
+    Delegated is a super small package that solves the retain cycle problem when dealing with closure-based delegation.
   DESC
   s.homepage     = "https://github.com/dreymonde/Delegated"
   s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "Oleg Dreyman" => "dreymonde@me.com" }
-  s.social_media_url   = ""
+  s.social_media_url   = "https://twitter.com/olegdreyman"
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.9"
   s.watchos.deployment_target = "2.0"
