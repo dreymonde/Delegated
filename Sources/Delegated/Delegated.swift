@@ -52,6 +52,14 @@ extension Delegated {
     
 }
 
+extension Delegated where Input == Void {
+    
+    public func call() -> Output? {
+        return self.call(())
+    }
+    
+}
+
 extension Delegated where Output == Void {
     
     public func call(_ input: Input) {
@@ -60,4 +68,11 @@ extension Delegated where Output == Void {
     
 }
 
+extension Delegated where Input == Void, Output == Void {
+    
+    public func call() {
+        self.call(())
+    }
+    
+}
 
