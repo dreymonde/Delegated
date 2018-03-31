@@ -54,6 +54,20 @@ extension Delegated {
 
 extension Delegated where Input == Void {
     
+    public mutating func delegate<Target : AnyObject>(to target: Target,
+                                                      with callback: @escaping (Target) -> Output) {
+        self.delegate(to: target, with: { target, voidInput in callback(target) })
+    }
+    
+    public mutating func stronglyDelegate<Target : AnyObject>(to target: Target,
+                                                              with callback: @escaping (Target) -> Output) {
+        self.stronglyDelegate(to: target, with: { target, voidInput in callback(target) })
+    }
+    
+}
+
+extension Delegated where Input == Void {
+    
     public func call() -> Output? {
         return self.call(())
     }
