@@ -13,7 +13,10 @@ Medium post [here](https://medium.com/anysuggestion/preventing-memory-leaks-with
 ```swift
 self.downloader = ImageDownloader()
 downloader.didDownload = { [weak self] image in
-    self?.currentImage = image
+    guard let strongSelf = self else {
+        return
+    }
+    strongSelf.currentImage = image
 }
 ```
 
