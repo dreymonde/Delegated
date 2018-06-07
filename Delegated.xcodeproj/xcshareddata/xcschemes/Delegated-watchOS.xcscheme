@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "005D2EA020C94BAC004474F2"
-               BuildableName = "Delegated_watchOS.framework"
+               BuildableName = "Delegated.framework"
                BlueprintName = "Delegated-watchOS"
                ReferencedContainer = "container:Delegated.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005D2EA020C94BAC004474F2"
-            BuildableName = "Delegated_watchOS.framework"
+            BuildableName = "Delegated.framework"
             BlueprintName = "Delegated-watchOS"
             ReferencedContainer = "container:Delegated.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005D2EA020C94BAC004474F2"
-            BuildableName = "Delegated_watchOS.framework"
+            BuildableName = "Delegated.framework"
             BlueprintName = "Delegated-watchOS"
             ReferencedContainer = "container:Delegated.xcodeproj">
          </BuildableReference>

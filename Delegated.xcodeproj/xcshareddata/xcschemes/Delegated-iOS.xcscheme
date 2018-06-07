@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "005D2E4920C94B57004474F2"
-               BuildableName = "Delegated_iOS.framework"
+               BuildableName = "Delegated.framework"
                BlueprintName = "Delegated-iOS"
                ReferencedContainer = "container:Delegated.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005D2E4920C94B57004474F2"
-            BuildableName = "Delegated_iOS.framework"
+            BuildableName = "Delegated.framework"
             BlueprintName = "Delegated-iOS"
             ReferencedContainer = "container:Delegated.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005D2E4920C94B57004474F2"
-            BuildableName = "Delegated_iOS.framework"
+            BuildableName = "Delegated.framework"
             BlueprintName = "Delegated-iOS"
             ReferencedContainer = "container:Delegated.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005D2E4920C94B57004474F2"
-            BuildableName = "Delegated_iOS.framework"
+            BuildableName = "Delegated.framework"
             BlueprintName = "Delegated-iOS"
             ReferencedContainer = "container:Delegated.xcodeproj">
          </BuildableReference>

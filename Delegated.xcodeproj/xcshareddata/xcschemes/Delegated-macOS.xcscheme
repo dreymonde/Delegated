@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "005D2E8420C94B9F004474F2"
-               BuildableName = "Delegated_macOS.framework"
+               BuildableName = "Delegated.framework"
                BlueprintName = "Delegated-macOS"
                ReferencedContainer = "container:Delegated.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005D2E8420C94B9F004474F2"
-            BuildableName = "Delegated_macOS.framework"
+            BuildableName = "Delegated.framework"
             BlueprintName = "Delegated-macOS"
             ReferencedContainer = "container:Delegated.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005D2E8420C94B9F004474F2"
-            BuildableName = "Delegated_macOS.framework"
+            BuildableName = "Delegated.framework"
             BlueprintName = "Delegated-macOS"
             ReferencedContainer = "container:Delegated.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "005D2E8420C94B9F004474F2"
-            BuildableName = "Delegated_macOS.framework"
+            BuildableName = "Delegated.framework"
             BlueprintName = "Delegated-macOS"
             ReferencedContainer = "container:Delegated.xcodeproj">
          </BuildableReference>
