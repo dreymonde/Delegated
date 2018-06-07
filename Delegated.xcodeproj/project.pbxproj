@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		005D2E5420C94B58004474F2 /* Delegated_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D2E4A20C94B57004474F2 /* Delegated_iOS.framework */; };
-		005D2E7220C94B78004474F2 /* Delegated_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D2E6920C94B78004474F2 /* Delegated_tvOS.framework */; };
-		005D2E8E20C94B9F004474F2 /* Delegated_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D2E8520C94B9F004474F2 /* Delegated_macOS.framework */; };
+		005D2E5420C94B58004474F2 /* Delegated.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D2E4A20C94B57004474F2 /* Delegated.framework */; };
+		005D2E7220C94B78004474F2 /* Delegated.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D2E6920C94B78004474F2 /* Delegated.framework */; };
+		005D2E8E20C94B9F004474F2 /* Delegated.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 005D2E8520C94B9F004474F2 /* Delegated.framework */; };
 		005D2EB020C94C5D004474F2 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005D2EAB20C94C5D004474F2 /* Delegated.swift */; };
 		005D2EB120C94C5D004474F2 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005D2EAB20C94C5D004474F2 /* Delegated.swift */; };
 		005D2EB220C94C5D004474F2 /* Delegated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005D2EAB20C94C5D004474F2 /* Delegated.swift */; };
@@ -44,13 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		005D2E4A20C94B57004474F2 /* Delegated_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delegated_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		005D2E4A20C94B57004474F2 /* Delegated.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delegated.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		005D2E5320C94B58004474F2 /* Delegated-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Delegated-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		005D2E6920C94B78004474F2 /* Delegated_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delegated_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		005D2E6920C94B78004474F2 /* Delegated.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delegated.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		005D2E7120C94B78004474F2 /* Delegated-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Delegated-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		005D2E8520C94B9F004474F2 /* Delegated_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delegated_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		005D2E8520C94B9F004474F2 /* Delegated.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delegated.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		005D2E8D20C94B9F004474F2 /* Delegated-macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Delegated-macOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		005D2EA120C94BAC004474F2 /* Delegated_watchOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delegated_watchOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		005D2EA120C94BAC004474F2 /* Delegated.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Delegated.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		005D2EAB20C94C5D004474F2 /* Delegated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Delegated.swift; sourceTree = "<group>"; };
 		005D2EAE20C94C5D004474F2 /* DelegatedTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegatedTests.swift; sourceTree = "<group>"; };
 		005D2EAF20C94C5D004474F2 /* LinuxMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinuxMain.swift; sourceTree = "<group>"; };
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005D2E5420C94B58004474F2 /* Delegated_iOS.framework in Frameworks */,
+				005D2E5420C94B58004474F2 /* Delegated.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005D2E7220C94B78004474F2 /* Delegated_tvOS.framework in Frameworks */,
+				005D2E7220C94B78004474F2 /* Delegated.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				005D2E8E20C94B9F004474F2 /* Delegated_macOS.framework in Frameworks */,
+				005D2E8E20C94B9F004474F2 /* Delegated.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,13 +132,13 @@
 		005D2E4B20C94B58004474F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				005D2E4A20C94B57004474F2 /* Delegated_iOS.framework */,
+				005D2E4A20C94B57004474F2 /* Delegated.framework */,
 				005D2E5320C94B58004474F2 /* Delegated-iOSTests.xctest */,
-				005D2E6920C94B78004474F2 /* Delegated_tvOS.framework */,
+				005D2E6920C94B78004474F2 /* Delegated.framework */,
 				005D2E7120C94B78004474F2 /* Delegated-tvOSTests.xctest */,
-				005D2E8520C94B9F004474F2 /* Delegated_macOS.framework */,
+				005D2E8520C94B9F004474F2 /* Delegated.framework */,
 				005D2E8D20C94B9F004474F2 /* Delegated-macOSTests.xctest */,
-				005D2EA120C94BAC004474F2 /* Delegated_watchOS.framework */,
+				005D2EA120C94BAC004474F2 /* Delegated.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,7 +245,7 @@
 			);
 			name = "Delegated-iOS";
 			productName = Delegated;
-			productReference = 005D2E4A20C94B57004474F2 /* Delegated_iOS.framework */;
+			productReference = 005D2E4A20C94B57004474F2 /* Delegated.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		005D2E5220C94B58004474F2 /* Delegated-iOSTests */ = {
@@ -281,7 +281,7 @@
 			);
 			name = "Delegated-tvOS";
 			productName = "Delegated-tvOS";
-			productReference = 005D2E6920C94B78004474F2 /* Delegated_tvOS.framework */;
+			productReference = 005D2E6920C94B78004474F2 /* Delegated.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		005D2E7020C94B78004474F2 /* Delegated-tvOSTests */ = {
@@ -317,7 +317,7 @@
 			);
 			name = "Delegated-macOS";
 			productName = "Delegated-macOS";
-			productReference = 005D2E8520C94B9F004474F2 /* Delegated_macOS.framework */;
+			productReference = 005D2E8520C94B9F004474F2 /* Delegated.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		005D2E8C20C94B9F004474F2 /* Delegated-macOSTests */ = {
@@ -353,7 +353,7 @@
 			);
 			name = "Delegated-watchOS";
 			productName = "Delegated-watchOS";
-			productReference = 005D2EA120C94BAC004474F2 /* Delegated_watchOS.framework */;
+			productReference = 005D2EA120C94BAC004474F2 /* Delegated.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -682,7 +682,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dreymonde.Delegated;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Delegated;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -707,7 +707,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = dreymonde.Delegated;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Delegated;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -769,7 +769,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dreymonde.Delegated-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Delegated;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -795,7 +795,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dreymonde.Delegated-tvOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Delegated;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -864,7 +864,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "dreymonde.Delegated-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Delegated;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -891,7 +891,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "dreymonde.Delegated-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Delegated;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -958,7 +958,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dreymonde.Delegated-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Delegated;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
@@ -985,7 +985,7 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "dreymonde.Delegated-watchOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = Delegated;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
