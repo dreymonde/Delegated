@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Delegated"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "Closure-based delegation without memory leaks"
   s.description  = <<-DESC
     Delegated is a super small package that solves the retain cycle problem when dealing with closure-based delegation.
