@@ -104,33 +104,56 @@ numberToString.isDelegateSet // Bool
 
 ## Installation
 
-**Delegated** is available through [Carthage][carthage-url]. To install, just write into your Cartfile:
+#### Swift Package Manager
 
-```ruby
-github "dreymonde/Delegated" ~> 0.1.0
+Starting with Xcode 11, **Delegated** is officially available *only* via Swift Package Manager.
+
+In Xcode 11 or grater, in you project, select: `File > Swift Packages > Add Pacakage Dependency`
+
+In the search bar type
+
 ```
+https://github.com/dreymonde/Delegated
+``` 
 
-**Delegated** is also available through [Cocoapods][cocoapods-url]:
+and when you find the package, with the **next** button you can proceed with the installation.
 
-```ruby
-pod 'Delegated', '~> 0.1.0'
-```
+If you can't find anything in the panel of the Swift Packages you probably haven't added yet your github account.
+You can do that under the **Preferences** panel of your Xcode, in the **Accounts** section.
 
-And Swift Package Manager:
+For command-line based apps, you can just add this directly to your **Package.swift** file:
 
 ```swift
 dependencies: [
-    .Package(url: "https://github.com/dreymonde/Delegated.git", majorVersion: 0, minor: 1),
+    .package(url: "https://github.com/dreymonde/Delegated", from: "0.1.2"),
 ]
 ```
 
-And, of course, you always have an option of just copying-and-pasting the code - **Delegated** is just one file, so feel free.
+#### Manual
+
+Of course, you always have an option of just copying-and-pasting the code - **Delegated** is just one file, so feel free.
+
+#### Deprecated dependency managers
+
+Last **Delegated** version to support [Carthage][carthage-url] and [Cocoapods][cocoapods-url] is **0.1.1**. Carthage and Cocoapods will no longer be officially supported.
+
+Carthage:
+
+```ruby
+github "dreymonde/Delegated" ~> 0.1.1
+```
+
+Cocoapods:
+
+```ruby
+pod 'Delegated', '~> 0.1.1'
+```
 
 ## See also
 
 - [krzysztofzablocki/Strongify](https://github.com/krzysztofzablocki/Strongify) - a 1-file µframework providing a nicer API for avoiding weak-strong dance.
 
-[swift-badge]: https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat
+[swift-badge]: https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat
 [swift-url]: https://swift.org
 [platform-badge]: https://img.shields.io/badge/platform-iOS%20%7C%20macOS%20%7C%20watchOS%20%7C%20tvOS%20%7C%20Linux-lightgrey.svg
 [platform-url]: https://developer.apple.com/swift/
