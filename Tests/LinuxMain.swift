@@ -1,6 +1,7 @@
 import XCTest
-@testable import DelegatedTests
 
-XCTMain([
-    testCase(DelegatedTests.allTests),
-])
+import DelegatedTests
+
+var tests = [XCTestCaseEntry]()
+tests += DelegatedTests.allTests()
+XCTMain(tests)
