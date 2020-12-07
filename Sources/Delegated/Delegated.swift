@@ -2,91 +2,208 @@
 //  Delegated.swift
 //  Delegated
 //
-//  Created by Oleg Dreyman on 3/11/18.
-//  Copyright © 2018 Delegated. All rights reserved.
+//  Created by Oleg Dreyman on 12/7/2020.
+//  Copyright © 2020 Oleg Dreyman. All rights reserved.
 //
 
+public typealias Delegated = Delegated1
 
-public struct Delegated<Input, Output> {
+@propertyWrapper
+public final class Delegated1<Input> {
     
-    private(set) var callback: ((Input) -> Output?)?
+    public init() {
+        self.callback = { _ in }
+    }
     
-    public init() { }
+    private var callback: (Input) -> Void
     
-    public mutating func delegate<Target : AnyObject>(to target: Target,
-                                                      with callback: @escaping (Target, Input) -> Output) {
+    public var wrappedValue: (Input) -> Void {
+        return callback
+    }
+    
+    public var projectedValue: Delegated1<Input> {
+        return self
+    }
+}
+
+public extension Delegated1 {
+    func delegate<Target: AnyObject>(
+        to target: Target,
+        with callback: @escaping (Target, Input) -> Void
+    ) {
         self.callback = { [weak target] input in
             guard let target = target else {
-                return nil
+                return
             }
             return callback(target, input)
         }
     }
     
-    public func call(_ input: Input) -> Output? {
-        return self.callback?(input)
-    }
-    
-    public var isDelegateSet: Bool {
-        return callback != nil
-    }
-    
-}
-
-extension Delegated {
-    
-    public mutating func stronglyDelegate<Target : AnyObject>(to target: Target,
-                                                              with callback: @escaping (Target, Input) -> Output) {
-        self.callback = { input in
-            return callback(target, input)
-        }
-    }
-    
-    public mutating func manuallyDelegate(with callback: @escaping (Input) -> Output) {
+    func manuallyDelegate(with callback: @escaping (Input) -> Void) {
         self.callback = callback
     }
     
-    public mutating func removeDelegate() {
-        self.callback = nil
+    func removeDelegate() {
+        self.callback = { _ in }
     }
-    
 }
 
-extension Delegated where Input == Void {
+@propertyWrapper
+public final class Delegated0 {
     
-    public mutating func delegate<Target : AnyObject>(to target: Target,
-                                                      with callback: @escaping (Target) -> Output) {
-        self.delegate(to: target, with: { target, voidInput in callback(target) })
+    public init() {
+        self.callback = { }
     }
     
-    public mutating func stronglyDelegate<Target : AnyObject>(to target: Target,
-                                                              with callback: @escaping (Target) -> Output) {
-        self.stronglyDelegate(to: target, with: { target, voidInput in callback(target) })
+    private var callback: () -> Void
+    
+    public var wrappedValue: () -> Void {
+        return callback
     }
     
+    public var projectedValue: Delegated0 {
+        return self
+    }
 }
 
-extension Delegated where Input == Void {
-    
-    public func call() -> Output? {
-        return self.call(())
+public extension Delegated0 {
+    func delegate<Target: AnyObject>(
+        to target: Target,
+        with callback: @escaping (Target) -> Void
+    ) {
+        self.callback = { [weak target] in
+            guard let target = target else {
+                return
+            }
+            return callback(target)
+        }
     }
     
-}
-
-extension Delegated where Output == Void {
-    
-    public func call(_ input: Input) {
-        self.callback?(input)
+    func manuallyDelegate(with callback: @escaping () -> Void) {
+        self.callback = callback
     }
     
+    func removeDelegate() {
+        self.callback = { }
+    }
 }
 
-extension Delegated where Input == Void, Output == Void {
+@propertyWrapper
+public final class Delegated2<Input1, Input2> {
     
-    public func call() {
-        self.call(())
+    public init() {
+        self.callback = { _, _ in }
     }
     
+    private var callback: (Input1, Input2) -> Void
+    
+    public var wrappedValue: (Input1, Input2) -> Void {
+        return callback
+    }
+    
+    public var projectedValue: Delegated2<Input1, Input2> {
+        return self
+    }
 }
 
+public extension Delegated2 {
+    func delegate<Target: AnyObject>(
+        to target: Target,
+        with callback: @escaping (Target, Input1, Input2) -> Void
+    ) {
+        self.callback = { [weak target] (input1, input2) in
+            guard let target = target else {
+                return
+            }
+            return callback(target, input1, input2)
+        }
+    }
+    
+    func manuallyDelegate(with callback: @escaping (Input1, Input2) -> Void) {
+        self.callback = callback
+    }
+    
+    func removeDelegate() {
+        self.callback = { _, _ in }
+    }
+}
+
+@propertyWrapper
+public final class Delegated3<Input1, Input2, Input3> {
+    
+    public init() {
+        self.callback = { _, _, _ in }
+    }
+    
+    private var callback: (Input1, Input2, Input3) -> Void
+    
+    public var wrappedValue: (Input1, Input2, Input3) -> Void {
+        return callback
+    }
+    
+    public var projectedValue: Delegated3<Input1, Input2, Input3> {
+        return self
+    }
+}
+
+public extension Delegated3 {
+    func delegate<Target: AnyObject>(
+        to target: Target,
+        with callback: @escaping (Target, Input1, Input2, Input3) -> Void
+    ) {
+        self.callback = { [weak target] (input1, input2, input3) in
+            guard let target = target else {
+                return
+            }
+            return callback(target, input1, input2, input3)
+        }
+    }
+    
+    func manuallyDelegate(with callback: @escaping (Input1, Input2, Input3) -> Void) {
+        self.callback = callback
+    }
+    
+    func removeDelegate() {
+        self.callback = { _, _, _ in }
+    }
+}
+
+@propertyWrapper
+public final class Delegated4<Input1, Input2, Input3, Input4> {
+    
+    public init() {
+        self.callback = { _, _, _, _ in }
+    }
+    
+    private var callback: (Input1, Input2, Input3, Input4) -> Void
+    
+    public var wrappedValue: (Input1, Input2, Input3, Input4) -> Void {
+        return callback
+    }
+    
+    public var projectedValue: Delegated4<Input1, Input2, Input3, Input4> {
+        return self
+    }
+}
+
+public extension Delegated4 {
+    func delegate<Target: AnyObject>(
+        to target: Target,
+        with callback: @escaping (Target, Input1, Input2, Input3, Input4) -> Void
+    ) {
+        self.callback = { [weak target] (input1, input2, input3, input4) in
+            guard let target = target else {
+                return
+            }
+            return callback(target, input1, input2, input3, input4)
+        }
+    }
+    
+    func manuallyDelegate(with callback: @escaping (Input1, Input2, Input3, Input4) -> Void) {
+        self.callback = callback
+    }
+    
+    func removeDelegate() {
+        self.callback = { _, _, _, _ in }
+    }
+}
