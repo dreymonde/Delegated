@@ -73,8 +73,12 @@ final class ScrollView {
 
 
 final class TextField {
+    @ReturningDelegated  var shouldReturn: (String) -> Bool?
+    
+    @ReturningDelegated0 var shouldBeginEditing: () -> Bool?
+    @ReturningDelegated2 var shouldReplace: (String, String) -> Bool?
+    
     @Delegated var didUpdate: (String) -> Void
-    @ReturningDelegated var shouldReturn: (String) -> Bool?
 }
 
 final class TestClass {
@@ -169,6 +173,15 @@ final class ViewController {
     let label = Label()
     
     func viewDidLoad() {
+        
+textField.$shouldReturn.delegate(to: self) { (self, string) -> Bool in
+    if string.count > 5 {
+        return true
+    } else {
+        return false
+    }
+}
+        
         textField.$didUpdate.delegate(to: self) { (self, text) in
             self.label.text = text
         }

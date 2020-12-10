@@ -101,6 +101,33 @@ final class TextField {
 }
 ```
 
+### Delegating a function with a return value
+
+If your delegated function is designed to have a return value (non-Void), use `@ReturningDelegated` wrapper.
+
+```swift
+final class TextField {
+    @ReturningDelegated  var shouldReturn: (String) -> Bool?
+    
+    @ReturningDelegated0 var shouldBeginEditing: () -> Bool?
+    @ReturningDelegated2 var shouldReplace: (String, String) -> Bool?
+}
+
+// ...
+
+textField.$shouldReturn.delegate(to: self) { (self, string) -> Bool in
+    if string.count > 5 {
+        return true
+    } else {
+        return false
+    }
+}
+```
+
+**IMPORTANT**: Make sure that your `@ReturningDelegated` function returns **an optional**. It will return `nil` if no delegate is set.
+
+Default `@ReturningDelegated` supports exactly one input argument. Use `@ReturningDelegated0` - `@ReturningDelegated4` if you need a different number of arguments (see above).
+
 ### Removing a delegate
 
 ```swift
@@ -108,6 +135,7 @@ final class TextField {
 // ...
 self.$didUpdate.removeDelegate()
 ```
+
 ## Installation
 
 #### Swift Package Manager
@@ -131,7 +159,7 @@ For command-line based apps, you can just add this directly to your **Package.sw
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/dreymonde/Delegated", from: "2.0.0"),
+    .package(url: "https://github.com/dreymonde/Delegated", from: "2.1.0"),
 ]
 ```
 
