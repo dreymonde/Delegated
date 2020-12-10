@@ -17,19 +17,13 @@ final class TextField {
     var didUpdate: (String) -> () = { _ in }
 }
 
-final class ViewController {
-    
-    let textField = TextField()
-    let label = Label()
-    
-    func viewDidLoad() {
-        textField.didUpdate = { [weak self] text in
-            guard let strongSelf = self else {
-                return
-            }
-            strongSelf.label.text = text
-        }
+// later...
+
+self.textField.didUpdate = { [weak self] text in
+    guard let strongSelf = self else {
+        return
     }
+    strongSelf.label.text = text
 }
 ```
 
@@ -40,18 +34,14 @@ final class TextField {
     @Delegated var didUpdate: (String) -> ()
 }
 
-final class ViewController {
-    
-    let textField = TextField()
-    let label = Label()
-    
-    func viewDidLoad() {
-        textField.$didUpdate.delegate(to: self) { (self, text) in
-            self.label.text = text
-        }
-    }
+// later...
+
+textField.$didUpdate.delegate(to: self) { (self, text) in
+    // `self` is weak automatically!
+    self.label.text = text
 }
 ```
+
 
 No retain cycles! No memory leaks! No `[weak self]`! 🎉
 
