@@ -3,7 +3,7 @@ import Foundation
 @testable import Delegated
 
 class A {
-    @Delegated0 var didFinish: () -> ()
+    @Delegated() var didFinish: () -> Void
     
     func call() {
         print(#function)
@@ -18,6 +18,7 @@ final class DelegatedTests: XCTestCase {
         // results.
         
         let a = A()
+        
         a.$didFinish.delegate(to: self) { (self) in
             self.hereYaGo()
         }
@@ -64,37 +65,38 @@ final class Label {
 
 
 final class Button {
-    @Delegated0 var didPress: () -> Void
+    @Delegated() var didPress: () -> Void
 }
 
 final class ScrollView {
-    @Delegated2 var didScrollTo: (_ x: CGFloat, _ y: CGFloat) -> Void
+    @Delegated() var didScrollTo: (_ x: CGFloat, _ y: CGFloat) -> Void
 }
 
 
 final class TextField {
-    @ReturningDelegated  var shouldReturn: (String) -> Bool?
-    
-    @ReturningDelegated0 var shouldBeginEditing: () -> Bool?
-    @ReturningDelegated2 var shouldReplace: (String, String) -> Bool?
-    
-    @Delegated var didUpdate: (String) -> Void
+    @Delegated()  var shouldReturn: (String) -> Bool?
+
+    @Delegated() var shouldBeginEditing: () -> Bool?
+    @Delegated() var shouldReplace: (String, String) -> Bool?
+
+    @Delegated() var didUpdate: (String) -> Void
 }
 
 final class TestClass {
-    @Delegated0 var zero: () -> Void
-    @Delegated1 var one: (Int) -> Void
-    @Delegated  var def: (Int) -> Void
-    @Delegated2 var two: (Int, String) -> Void
-    @Delegated3 var three: (Int, String, Bool) -> Void
-    @Delegated4 var four: (Int, String, Bool, Float) -> Void
+    @Delegated() var zero: () -> Void
+    @Delegated() var one: (Int) -> Void
+    @Delegated()  var def: (Int) -> Void
+    @Delegated() var two: (Int, String) -> Void
+    @Delegated() var three: (Int, String, Bool) -> Void
+    @Delegated() var four: (Int, String, Bool, Float) -> Void
+
+    @Delegated() var zeroOne: () -> Bool?
+    @Delegated() var oneOne: (Int) -> Bool?
+    @Delegated()  var defOne: (Int) -> Bool?
+    @Delegated() var twoOne: (Int, String) -> Bool?
+    @Delegated() var threeOne: (Int, String, Bool) -> Bool?
+    @Delegated() var fourOne: (Int, String, Bool, Float) -> Bool?
     
-    @ReturningDelegated0 var zeroOne: () -> Bool?
-    @ReturningDelegated1 var oneOne: (Int) -> Bool?
-    @ReturningDelegated  var defOne: (Int) -> Bool?
-    @ReturningDelegated2 var twoOne: (Int, String) -> Bool?
-    @ReturningDelegated3 var threeOne: (Int, String, Bool) -> Bool?
-    @ReturningDelegated4 var fourOne: (Int, String, Bool, Float) -> Bool?
 }
 
 final class Tester {
@@ -129,7 +131,7 @@ final class Tester {
         cls.$four.delegate(to: self) { (self, int, str, bol, flt) in
             self.doSomething(values: int, str, bol, flt)
         }
-        
+
         cls.$zeroOne.delegate(to: self) { (self) in
             return self.returnSomething()
         }
@@ -157,7 +159,7 @@ final class Tester {
         cls.two(2, "2")
         cls.three(3, "3", true)
         cls.four(4, "4", true, 4.0)
-        
+
         print(cls.zeroOne()!)
         print(cls.oneOne(1)!)
         print(cls.defOne(11)!)
@@ -174,18 +176,18 @@ final class ViewController {
     
     func viewDidLoad() {
         
-textField.$shouldReturn.delegate(to: self) { (self, string) -> Bool in
-    if string.count > 5 {
-        return true
-    } else {
-        return false
-    }
-}
-        
+        textField.$shouldReturn.delegate(to: self) { (self, string) -> Bool in
+            if string.count > 5 {
+                return true
+            } else {
+                return false
+            }
+        }
+
         textField.$didUpdate.delegate(to: self) { (self, text) in
             self.label.text = text
         }
-        
+
         textField.$shouldReturn.delegate(to: self) { (self, str) -> Bool in
             if str == "A" {
                 return true
