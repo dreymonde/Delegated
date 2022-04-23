@@ -408,3 +408,43 @@ public extension ReturningDelegated4 {
         self.callback = { _, _, _, _ in nil }
     }
 }
+
+public extension Delegated0 {
+    func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated0>) {
+        self.delegate(to: target) { (target) in
+           target[keyPath: delegation].wrappedValue()
+        }
+    }
+}
+
+public extension Delegated1 {
+    func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated1<Target>>) {
+        self.delegate(to: target) { (target, _) in
+           target[keyPath: delegation].wrappedValue(target)
+        }
+    }
+}
+
+public extension Delegated2 {
+    func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated2<Target, Input2>>) {
+        self.delegate(to: target) { (target, _, input2) in
+           target[keyPath: delegation].wrappedValue(target, input2)
+        }
+    }
+}
+
+public extension Delegated3 {
+    func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated3<Target, Input2, Input3>>) {
+        self.delegate(to: target) { (target, _, input2, input3) in
+           target[keyPath: delegation].wrappedValue(target, input2, input3)
+        }
+    }
+}
+
+public extension Delegated4 {
+    func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated4<Target, Input2, Input3, Input4>>) {
+        self.delegate(to: target) { (target, _, input2, input3, input4) in
+           target[keyPath: delegation].wrappedValue(target, input2, input3, input4)
+        }
+    }
+}
