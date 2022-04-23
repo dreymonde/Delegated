@@ -1,5 +1,8 @@
 # Delegated 2.0
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fdreymonde%2FDelegated%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/dreymonde/Delegated)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fdreymonde%2FDelegated%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/dreymonde/Delegated)
+
 **Delegated** is a super small package that helps you avoid retain cycles when using closure-based delegation.
 
 New Medium post [here](https://medium.com/anysuggestion/no-more-weak-self-or-the-weird-new-future-of-delegation-f2a2745cd73).
