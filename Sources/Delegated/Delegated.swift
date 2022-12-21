@@ -30,6 +30,18 @@ public final class Delegated1<Input> {
 public extension Delegated1 {
     func delegate<Target: AnyObject>(
         to target: Target,
+        with callback: @Sendable @escaping (Target, Input) -> Void
+    ) {
+        self.callback = { [weak target] input in
+            guard let target = target else {
+                return
+            }
+            return callback(target, input)
+        }
+    }
+    
+    func _delegate<Target: AnyObject>(
+        to target: Target,
         with callback: @escaping (Target, Input) -> Void
     ) {
         self.callback = { [weak target] input in
@@ -46,6 +58,74 @@ public extension Delegated1 {
     
     func removeDelegate() {
         self.callback = { _ in }
+    }
+}
+
+@propertyWrapper
+public final class MultipleDelegated1<Input> {
+    
+    public init() {
+        self.callbacks = []
+    }
+    
+    private var callbacks: [(ObjectIdentifier, ((Input) -> Void))]
+    
+    public var wrappedValue: (Input) -> Void {
+        return { input in
+            self.callbacks.forEach({ $1(input) })
+        }
+    }
+    
+    public var projectedValue: MultipleDelegate1To<Input> {
+        return MultipleDelegate1To { [weak self] objectID, handle in
+            self?.callbacks.append((objectID, handle))
+        } remove: { [weak self] objectID in
+            self?.callbacks.removeAll(where: { $0.0 == objectID })
+        }
+
+    }
+}
+
+public struct MultipleDelegate1To<Input> {
+    let addDelegate: (ObjectIdentifier, @escaping ((Input) -> Void)) -> Void
+    let remove: (ObjectIdentifier) -> Void
+        
+    public func filter(_ isIncluded: @escaping (Input) -> Bool) -> MultipleDelegate1To<Input> {
+        return MultipleDelegate1To { (objectID, handle) in
+            self.addDelegate(objectID, { (input) in
+                if isIncluded(input) {
+                    handle(input)
+                }
+            })
+        } remove: { objectID in
+            self.remove(objectID)
+        }
+    }
+}
+
+public extension MultipleDelegate1To {
+    func addDelegate<Target: AnyObject>(
+        _ target: Target,
+        with callback: @Sendable @escaping (Target, Input) -> Void
+    ) {
+        let objectId = ObjectIdentifier(target)
+        self.addDelegate(objectId, { [weak target] input in
+            guard let target = target else {
+                self.remove(objectId)
+                return
+            }
+            callback(target, input)
+        })
+    }
+    
+    final class _Dummy { }
+    
+    func manuallyDelegate(with callback: @Sendable @escaping (Input) -> Void) {
+        self.addDelegate(ObjectIdentifier(_Dummy()), callback)
+    }
+    
+    func removeDelegate<Target: AnyObject>(_ target: Target) {
+        self.remove(ObjectIdentifier(target))
     }
 }
 
