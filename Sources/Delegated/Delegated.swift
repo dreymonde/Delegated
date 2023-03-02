@@ -81,14 +81,16 @@ public final class MultipleDelegated1<Input> {
             self?.callbacks.append((objectID, handle))
         } remove: { [weak self] objectID in
             self?.callbacks.removeAll(where: { $0.0 == objectID })
+        } getDelegateCount: { [weak self] in
+            self?.callbacks.count ?? 0
         }
-
     }
 }
 
 public struct MultipleDelegate1To<Input> {
     let addDelegate: (ObjectIdentifier, @escaping ((Input) -> Void)) -> Void
     let remove: (ObjectIdentifier) -> Void
+    let getDelegateCount: () -> Int
         
     public func filter(_ isIncluded: @escaping (Input) -> Bool) -> MultipleDelegate1To<Input> {
         return MultipleDelegate1To { (objectID, handle) in
@@ -99,6 +101,8 @@ public struct MultipleDelegate1To<Input> {
             })
         } remove: { objectID in
             self.remove(objectID)
+        } getDelegateCount: {
+            self.getDelegateCount()
         }
     }
 }
@@ -126,6 +130,10 @@ public extension MultipleDelegate1To {
     
     func removeDelegate<Target: AnyObject>(_ target: Target) {
         self.remove(ObjectIdentifier(target))
+    }
+    
+    var delegateCount: Int {
+        getDelegateCount()
     }
 }
 
