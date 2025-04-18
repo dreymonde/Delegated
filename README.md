@@ -9,11 +9,7 @@ New Medium post [here](https://medium.com/anysuggestion/no-more-weak-self-or-the
 
 Original Medium post (Delegated 0.1.2) [here](https://medium.com/anysuggestion/preventing-memory-leaks-with-swift-compile-time-safety-49b845df4dc6).
 
--
-
 > 🚨 WARNING!  **Delegated 2.0 & 3.0** are not compatible with **Delegated 0.1.2**. If you don't want to migrate your current codebase, stay on Delegated 0.1.2. See documentation for Delegated 0.1.2 [here](https://github.com/dreymonde/Delegated/tree/0.1.2). If you need any help migrating from 0.1.x to 2.0.x, please open an issue.
-
--
 
 > 🚨 WARNING!  **Delegated 3.0** uses variadic types which is only available on newer platforms and in Swift 5.9. If you don't want to migrate your current codebase, stay on Delegated 2.2.0. See documentation for Delegated 2.2.0 [here](https://github.com/dreymonde/Delegated/tree/2.2.0). If you need any help migrating from 2.x to 3.x, please open an issue.
 
