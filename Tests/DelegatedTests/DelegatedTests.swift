@@ -2,8 +2,12 @@ import XCTest
 import Foundation
 @testable import Delegated
 
+@available(watchOS 10.0.0, *)
+@available(tvOS 17.0.0, *)
+@available(iOS 17.0.0, *)
+@available(macOS 14.0.0, *)
 class A {
-    @Delegated0 var didFinish: () -> ()
+    @Delegated var didFinish: () -> ()
     
     func call() {
         print(#function)
@@ -11,6 +15,10 @@ class A {
     }
 }
 
+@available(watchOS 10.0.0, *)
+@available(tvOS 17.0.0, *)
+@available(iOS 17.0.0, *)
+@available(macOS 14.0.0, *)
 final class DelegatedTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
@@ -63,40 +71,80 @@ final class Label {
 }
 
 
+@available(watchOS 10.0.0, *)
+@available(tvOS 17.0.0, *)
+@available(iOS 17.0.0, *)
+@available(macOS 14.0.0, *)
 final class Button {
-    @Delegated0 var didPress: () -> Void
+    @Delegated var didPress: () -> Void
 }
 
+@available(watchOS 10.0.0, *)
+@available(tvOS 17.0.0, *)
+@available(iOS 17.0.0, *)
+@available(macOS 14.0.0, *)
+final class Alert {
+    @Delegated var didConfirm: () -> Void
+    @Delegated var didCancel: () -> Void
+    @ReturningDelegated var shouldReturn: (String) -> Bool?
+    
+    let confirmButton = Button()
+    let cancelButton = Button()
+    let textField = TextField()
+    
+    func didLoad() {
+        confirmButton.$didPress.pipe(via: self, to: \.$didConfirm)
+        cancelButton.$didPress.pipe(via: self, to: \.$didCancel)
+        textField.$shouldReturn.pipe(via: self, through: \.$shouldReturn)
+    }
+}
+
+@available(watchOS 10.0.0, *)
+@available(tvOS 17.0.0, *)
+@available(iOS 17.0.0, *)
+@available(macOS 14.0.0, *)
 final class ScrollView {
-    @Delegated2 var didScrollTo: (_ x: CGFloat, _ y: CGFloat) -> Void
+    @Delegated var didScrollTo: (_ x: CGFloat, _ y: CGFloat) -> Void
 }
 
 
+@available(watchOS 10.0.0, *)
+@available(tvOS 17.0.0, *)
+@available(iOS 17.0.0, *)
+@available(macOS 14.0.0, *)
 final class TextField {
     @ReturningDelegated  var shouldReturn: (String) -> Bool?
     
-    @ReturningDelegated0 var shouldBeginEditing: () -> Bool?
-    @ReturningDelegated2 var shouldReplace: (String, String) -> Bool?
+    @ReturningDelegated var shouldBeginEditing: () -> Bool?
+    @ReturningDelegated var shouldReplace: (String, String) -> Bool?
     
     @Delegated var didUpdate: (String) -> Void
 }
 
+@available(watchOS 10.0.0, *)
+@available(tvOS 17.0.0, *)
+@available(iOS 17.0.0, *)
+@available(macOS 14.0.0, *)
 final class TestClass {
-    @Delegated0 var zero: () -> Void
-    @Delegated1 var one: (Int) -> Void
-    @Delegated  var def: (Int) -> Void
-    @Delegated2 var two: (Int, String) -> Void
-    @Delegated3 var three: (Int, String, Bool) -> Void
-    @Delegated4 var four: (Int, String, Bool, Float) -> Void
+    @Delegated var zero: () -> Void
+    @Delegated var one: (Int) -> Void
+    @Delegated var def: (Int) -> Void
+    @Delegated var two: (Int, String) -> Void
+    @Delegated var three: (Int, String, Bool) -> Void
+    @Delegated var four: (Int, String, Bool, Float) -> Void
     
-    @ReturningDelegated0 var zeroOne: () -> Bool?
-    @ReturningDelegated1 var oneOne: (Int) -> Bool?
-    @ReturningDelegated  var defOne: (Int) -> Bool?
-    @ReturningDelegated2 var twoOne: (Int, String) -> Bool?
-    @ReturningDelegated3 var threeOne: (Int, String, Bool) -> Bool?
-    @ReturningDelegated4 var fourOne: (Int, String, Bool, Float) -> Bool?
+    @ReturningDelegated var zeroOne: () -> Bool?
+    @ReturningDelegated var oneOne: (Int) -> Bool?
+    @ReturningDelegated var defOne: (Int) -> Bool?
+    @ReturningDelegated var twoOne: (Int, String) -> Bool?
+    @ReturningDelegated var threeOne: (Int, String, Bool) -> Bool?
+    @ReturningDelegated var fourOne: (Int, String, Bool, Float) -> Bool?
 }
 
+@available(watchOS 10.0.0, *)
+@available(tvOS 17.0.0, *)
+@available(iOS 17.0.0, *)
+@available(macOS 14.0.0, *)
 final class Tester {
     
     let cls = TestClass()
@@ -167,6 +215,10 @@ final class Tester {
     }
 }
 
+@available(watchOS 10.0.0, *)
+@available(tvOS 17.0.0, *)
+@available(iOS 17.0.0, *)
+@available(macOS 14.0.0, *)
 final class ViewController {
     
     let textField = TextField()

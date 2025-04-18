@@ -6,9 +6,7 @@
 //  Copyright © 2020 Oleg Dreyman. All rights reserved.
 //
 
-public typealias Delegated = Delegated1
-public typealias ReturningDelegated = ReturningDelegated1
-
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 @propertyWrapper
 public final class Delegated1<Input> {
     
@@ -27,6 +25,7 @@ public final class Delegated1<Input> {
     }
 }
 
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 public extension Delegated1 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -49,6 +48,7 @@ public extension Delegated1 {
     }
 }
 
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 @propertyWrapper
 public final class Delegated0 {
     
@@ -67,6 +67,7 @@ public final class Delegated0 {
     }
 }
 
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 public extension Delegated0 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -89,6 +90,7 @@ public extension Delegated0 {
     }
 }
 
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 @propertyWrapper
 public final class Delegated2<Input1, Input2> {
     
@@ -107,6 +109,7 @@ public final class Delegated2<Input1, Input2> {
     }
 }
 
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 public extension Delegated2 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -129,6 +132,7 @@ public extension Delegated2 {
     }
 }
 
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 @propertyWrapper
 public final class Delegated3<Input1, Input2, Input3> {
     
@@ -147,6 +151,7 @@ public final class Delegated3<Input1, Input2, Input3> {
     }
 }
 
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 public extension Delegated3 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -169,6 +174,7 @@ public extension Delegated3 {
     }
 }
 
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 @propertyWrapper
 public final class Delegated4<Input1, Input2, Input3, Input4> {
     
@@ -187,6 +193,7 @@ public final class Delegated4<Input1, Input2, Input3, Input4> {
     }
 }
 
+@available(*, deprecated, renamed: "Delegated", message: "On newer SDK versions, use variadic @Delegated")
 public extension Delegated4 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -209,6 +216,7 @@ public extension Delegated4 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 @propertyWrapper
 public final class ReturningDelegated1<Input, Output> {
     
@@ -227,6 +235,7 @@ public final class ReturningDelegated1<Input, Output> {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension ReturningDelegated1 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -249,6 +258,7 @@ public extension ReturningDelegated1 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 @propertyWrapper
 public final class ReturningDelegated0<Output> {
     
@@ -267,6 +277,7 @@ public final class ReturningDelegated0<Output> {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension ReturningDelegated0 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -289,6 +300,7 @@ public extension ReturningDelegated0 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 @propertyWrapper
 public final class ReturningDelegated2<Input1, Input2, Output> {
     
@@ -307,6 +319,7 @@ public final class ReturningDelegated2<Input1, Input2, Output> {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension ReturningDelegated2 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -329,6 +342,7 @@ public extension ReturningDelegated2 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 @propertyWrapper
 public final class ReturningDelegated3<Input1, Input2, Input3, Output> {
     
@@ -347,6 +361,7 @@ public final class ReturningDelegated3<Input1, Input2, Input3, Output> {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension ReturningDelegated3 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -369,6 +384,7 @@ public extension ReturningDelegated3 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 @propertyWrapper
 public final class ReturningDelegated4<Input1, Input2, Input3, Input4, Output> {
     
@@ -387,6 +403,7 @@ public final class ReturningDelegated4<Input1, Input2, Input3, Input4, Output> {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension ReturningDelegated4 {
     func delegate<Target: AnyObject>(
         to target: Target,
@@ -409,6 +426,7 @@ public extension ReturningDelegated4 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension Delegated0 {
     func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated0>) {
         self.delegate(to: target) { (target) in
@@ -417,6 +435,7 @@ public extension Delegated0 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension Delegated1 {
     func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated1<Target>>) {
         self.delegate(to: target) { (target, _) in
@@ -425,6 +444,7 @@ public extension Delegated1 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension Delegated2 {
     func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated2<Target, Input2>>) {
         self.delegate(to: target) { (target, _, input2) in
@@ -433,6 +453,7 @@ public extension Delegated2 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension Delegated3 {
     func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated3<Target, Input2, Input3>>) {
         self.delegate(to: target) { (target, _, input2, input3) in
@@ -441,6 +462,7 @@ public extension Delegated3 {
     }
 }
 
+@available(*, deprecated, renamed: "ReturningDelegated", message: "On newer SDK versions, use variadic @ReturningDelegated")
 public extension Delegated4 {
     func pipe<Target: AnyObject>(via target: Target, to delegation: KeyPath<Target, Delegated4<Target, Input2, Input3, Input4>>) {
         self.delegate(to: target) { (target, _, input2, input3, input4) in

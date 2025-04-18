@@ -9,7 +9,13 @@ New Medium post [here](https://medium.com/anysuggestion/no-more-weak-self-or-the
 
 Original Medium post (Delegated 0.1.2) [here](https://medium.com/anysuggestion/preventing-memory-leaks-with-swift-compile-time-safety-49b845df4dc6).
 
-> 🚨 WARNING!  **Delegated 2.0** is not compatible with **Delegated 0.1.2**. If you don't want to migrate your current codebase, stay on Delegated 0.1.2. See documentation for Delegated 0.1.2 [here](https://github.com/dreymonde/Delegated/tree/0.1.2). If you need any help migrating from 0.1.x to 2.0.x, please open an issue.
+-
+
+> 🚨 WARNING!  **Delegated 2.0 & 3.0** are not compatible with **Delegated 0.1.2**. If you don't want to migrate your current codebase, stay on Delegated 0.1.2. See documentation for Delegated 0.1.2 [here](https://github.com/dreymonde/Delegated/tree/0.1.2). If you need any help migrating from 0.1.x to 2.0.x, please open an issue.
+
+-
+
+> 🚨 WARNING!  **Delegated 3.0** uses variadic types which is only available on newer platforms and in Swift 5.9. If you don't want to migrate your current codebase, stay on Delegated 2.2.0. See documentation for Delegated 2.2.0 [here](https://github.com/dreymonde/Delegated/tree/2.2.0). If you need any help migrating from 2.x to 3.x, please open an issue.
 
 ## Usage
 
@@ -58,17 +64,15 @@ final class TextField {
 }
 ```
 
-This will only compile for closures that have **exactly one** argument and no return value. To use any other number of arguments, use this:
+You can also use `@Delegated` with any number of parameters:
 
 ```swift
 final class TextField {
-    @Delegated0 var didStartEditing: () -> Void
-    @Delegated1 var didUpdate: (String) -> Void
-    @Delegated2 var didReplace: (String, String) -> Void
+    @Delegated var didStartEditing: () -> Void
+    @Delegated var didUpdate: (String) -> Void
+    @Delegated var didReplace: (String, String) -> Void
 }
 ```
-
-`Delegated0` - `Delegated4` are provided out of the box. `Delegated` is a typealias for `Delegated1`.
 
 ### Registering as a delegate
 
@@ -110,10 +114,9 @@ If your delegated function is designed to have a return value (non-Void), use `@
 
 ```swift
 final class TextField {
-    @ReturningDelegated  var shouldReturn: (String) -> Bool?
-    
-    @ReturningDelegated0 var shouldBeginEditing: () -> Bool?
-    @ReturningDelegated2 var shouldReplace: (String, String) -> Bool?
+    @ReturningDelegated var shouldReturn: (String) -> Bool?
+    @ReturningDelegated var shouldBeginEditing: () -> Bool?
+    @ReturningDelegated var shouldReplace: (String, String) -> Bool?
 }
 
 // ...
@@ -129,8 +132,6 @@ textField.$shouldReturn.delegate(to: self) { (self, string) -> Bool in
 
 **IMPORTANT**: Make sure that your `@ReturningDelegated` function returns **an optional**. It will return `nil` if no delegate is set.
 
-Default `@ReturningDelegated` supports exactly one input argument. Use `@ReturningDelegated0` - `@ReturningDelegated4` if you need a different number of arguments (see above).
-
 ### Removing a delegate
 
 ```swift
@@ -138,6 +139,31 @@ Default `@ReturningDelegated` supports exactly one input argument. Use `@Returni
 // ...
 self.$didUpdate.removeDelegate()
 ```
+
+### Piping a delegate
+
+Use `pipa(via:to:)` function to quickly pass delegation up the chain
+
+```swift
+final class Button {
+    @Delegated var didPress: () -> Void
+}
+
+final class Alert {
+    @Delegated var didConfirm: () -> Void
+    @Delegated var didCancel: () -> Void
+    
+    let confirmButton = Button()
+    let cancelButton = Button()
+    
+    func didLoad() {
+        confirmButton.$didPress.pipe(via: self, to: \.$didConfirm)
+        cancelButton.$didPress.pipe(via: self, to: \.$didCancel)
+    }
+}
+```
+
+For `@ReturningDelegate`, use `pipa(via:through:)` function
 
 ## Installation
 
