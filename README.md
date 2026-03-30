@@ -184,7 +184,7 @@ For command-line based apps, you can just add this directly to your **Package.sw
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/dreymonde/Delegated", from: "2.1.0"),
+    .package(url: "https://github.com/dreymonde/Delegated", from: "3.0.0"),
 ]
 ```
 
